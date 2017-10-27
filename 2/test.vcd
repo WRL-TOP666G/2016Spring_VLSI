@@ -1,0 +1,63 @@
+$date
+    Mar  2, 2016  17:15:03
+$end
+$version
+    TOOL:	ncsim	10.20-s114
+$end
+$timescale
+    10 ps
+$end
+
+$scope module test_tb $end
+$var reg       1 !    in1  $end
+$var reg       1 "    in2  $end
+$var reg       1 #    in3  $end
+$var wire      1 $    out1  $end
+$var wire      1 %    out2  $end
+$var wire      1 &    out3  $end
+
+$scope module t0 $end
+$var wire      1 '    in1  $end
+$var wire      1 (    in2  $end
+$var wire      1 )    in3  $end
+$var wire      1 $    out1  $end
+$var wire      1 %    out2  $end
+$var wire      1 &    out3  $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0!
+1"
+0#
+0$
+1%
+1&
+0'
+1(
+0)
+$end
+#1000
+1!
+1'
+#2000
+0!
+0"
+0(
+0'
+0%
+0&
+1$
+#3000
+1!
+1'
+1%
+#4000
+1"
+1#
+1)
+1(
+0$
+#6000
