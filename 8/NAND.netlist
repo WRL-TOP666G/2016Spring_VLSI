@@ -1,0 +1,7 @@
+*NAND_gate
+.subckt nand X Y F GND VDD
+Mp1 F X VDD VDD w=1u L=0.18u
+Mp2 F Y VDD VDD w=1u L=0.18u
+Mn1 F X e  GND w=0.5u L=0.18u
+Mn2 e Y GND GND w=0.5u L=0.18u
+.ends

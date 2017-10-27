@@ -1,0 +1,7 @@
+*NOR_gate
+.subckt nor X Y F GND VDD
+Mp1 e X VDD VDD w=1u L=0.18u
+Mp2 F Y e VDD w=1u L=0.18u
+Mn1 F Y GND GND w=0.5u L=0.18u
+Mn2 F X GND GND w=0.5u L=0.18u
+.ends
