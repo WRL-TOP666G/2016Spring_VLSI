@@ -1,0 +1,67 @@
+wvResizeWindow -win $_nWave1 -2 26 1916 1003
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 {/home/user2/vlsi16/vlsi1641/lab5/ProbC/regfile.fsdb}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/regfile_sipo_tb"
+wvSetPosition -win $_nWave1 {("G1" 12)}
+wvSetPosition -win $_nWave1 {("G1" 12)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/regfile_sipo_tb/clk} \
+{/regfile_sipo_tb/reg_enable} \
+{/regfile_sipo_tb/reg_write} \
+{/regfile_sipo_tb/rst} \
+{/regfile_sipo_tb/src1\[31:0\]} \
+{/regfile_sipo_tb/src2\[31:0\]} \
+{/regfile_sipo_tb/src3\[31:0\]} \
+{/regfile_sipo_tb/src4\[31:0\]} \
+{/regfile_sipo_tb/src5\[31:0\]} \
+{/regfile_sipo_tb/src_addr\[6:0\]} \
+{/regfile_sipo_tb/write_addr\[6:0\]} \
+{/regfile_sipo_tb/write_data\[31:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 1 2 3 4 5 6 7 8 9 10 11 12 )} 
+wvSetPosition -win $_nWave1 {("G1" 12)}
+wvGetSignalClose -win $_nWave1
+wvZoomAll -win $_nWave1
+wvSetCursor -win $_nWave1 15908.557750 -snap {("G1" 7)}
+wvSetCursor -win $_nWave1 2244.524237 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 12994.614004 -snap {("G1" 5)}
+wvZoom -win $_nWave1 12541.771394 13309.634949
+wvSearchNext -win $_nWave1
+wvSearchNext -win $_nWave1
+wvSearchNext -win $_nWave1
+wvSearchNext -win $_nWave1
+wvSearchNext -win $_nWave1
+wvSearchNext -win $_nWave1
+wvSearchPrev -win $_nWave1
+wvSearchPrev -win $_nWave1
+wvSearchPrev -win $_nWave1
+wvSearchPrev -win $_nWave1
+wvSetCursor -win $_nWave1 13499.708691 -snap {("G1" 6)}
+wvSetCursor -win $_nWave1 13031.454375 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 11827.142569 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 11916.749627 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 11890.097271 -snap {("G1" 3)}
+wvSetCursor -win $_nWave1 11849.659215 -snap {("G1" 6)}
+wvSetCursor -win $_nWave1 11845.523504 -snap {("G1" 8)}
+wvSetCursor -win $_nWave1 11840.468747 -snap {("G1" 6)}
+wvSetCursor -win $_nWave1 5778.436423
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 6668.603176 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 6918.583890 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 7197.974100 -snap {("G1" 11)}
+wvZoom -win $_nWave1 0.000000 7600.000000
+wvZoom -win $_nWave1 0.000000 7600.000000
+wvSetCursor -win $_nWave1 2942.669060 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 3952.363854 -snap {("G1" 12)}
+wvSetCursor -win $_nWave1 4025.134650 -snap {("G1" 12)}
+wvSetCursor -win $_nWave1 4684.619988 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 5912.627169 -snap {("G1" 11)}
+wvSetCursor -win $_nWave1 732.256134 -snap {("G2" 0)}
+wvExit

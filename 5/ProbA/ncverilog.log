@@ -1,0 +1,49 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Apr 07, 2016 at 21:20:37 CST
+ncverilog
+	ALU_tb.v
+	+define+FSDB
+	+access+r
+Recompiling... reason: file './ALU.v' is newer than expected.
+	expected: Thu Apr  7 20:54:55 2016
+	actual:   Thu Apr  7 21:02:18 2016
+file: ALU_tb.v
+	module worklib.ALU:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ALU:v <0x6793cfc4>
+			streams:   1, words:  5528
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:                7       7
+		Scalar wires:             3       -
+		Vectored wires:           4       -
+		Always blocks:            1       1
+		Initial blocks:           2       2
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.ALU_tb:v
+Loading snapshot worklib.ALU_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'ALU.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+Simulation complete via $finish(1) at time 210 NS + 0
+./ALU_tb.v:58 #130 $finish;
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Apr 07, 2016 at 21:20:38 CST  (total: 00:00:01)

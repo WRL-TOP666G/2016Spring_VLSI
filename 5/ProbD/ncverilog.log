@@ -1,0 +1,98 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Apr 08, 2016 at 16:08:24 CST
+ncverilog
+	subsystem_tb.v
+	+define+FSDB
+	+access+r
+Loading snapshot worklib.subsystem_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'subsystem.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+-----------------------------------------------------------
+REG[          0] = 00000000 PASS!!!
+REG[          1] = 00000053 PASS!!!
+REG[          2] = 000000af PASS!!!
+REG[          3] = 70000fff PASS!!!
+REG[          4] = 00000004 PASS!!!
+REG[          5] = 800000af PASS!!!
+REG[          6] = 00000fff PASS!!!
+REG[          7] = 80000004 PASS!!!
+REG[          8] = f00000af PASS!!!
+REG[          9] = 00000000 PASS!!!
+REG[         10] = 00000000 PASS!!!
+REG[         11] = 00000000 PASS!!!
+REG[         12] = 00000000 PASS!!!
+REG[         13] = 00000000 PASS!!!
+REG[         14] = 00000000 PASS!!!
+REG[         15] = 00000000 PASS!!!
+REG[         16] = 00000000 PASS!!!
+REG[         17] = 00000000 PASS!!!
+REG[         18] = 00000000 PASS!!!
+REG[         19] = 00000000 PASS!!!
+REG[         20] = 00000000 PASS!!!
+REG[         21] = 00000000 PASS!!!
+REG[         22] = 00000000 PASS!!!
+REG[         23] = 00000000 PASS!!!
+REG[         24] = 00000000 PASS!!!
+REG[         25] = 00000000 PASS!!!
+REG[         26] = 00000000 PASS!!!
+REG[         27] = 00000000 PASS!!!
+REG[         28] = 00000000 PASS!!!
+REG[         29] = 00000000 PASS!!!
+REG[         30] = 00000000 PASS!!!
+REG[         31] = 00000000 PASS!!!
+REG[         32] = 00000102 PASS!!!
+REG[         33] = ffffffa4 PASS!!!
+REG[         34] = 00000003 PASS!!!
+REG[         35] = 000000ff PASS!!!
+REG[         36] = 000000fc PASS!!!
+REG[         37] = ffffff00 PASS!!!
+REG[         38] = 070000ff PASS!!!
+REG[         39] = f70000ff PASS!!!
+REG[         40] = ffffffac PASS!!!
+REG[         41] = fffffffc PASS!!!
+REG[         42] = 00000fff PASS!!!
+REG[         43] = 80000004 PASS!!!
+REG[         44] = 70000fff PASS!!!
+REG[         45] = 00000001 PASS!!!
+REG[         46] = 00000001 PASS!!!
+REG[         47] = 0000fff0 PASS!!!
+REG[         48] = 0000fff7 PASS!!!
+REG[         49] = 00000000 PASS!!!
+REG[         50] = 00000000 PASS!!!
+REG[         51] = 00000000 PASS!!!
+REG[         52] = 00000000 PASS!!!
+REG[         53] = 00000000 PASS!!!
+REG[         54] = 00000000 PASS!!!
+REG[         55] = 00000000 PASS!!!
+REG[         56] = 00000000 PASS!!!
+REG[         57] = 00000000 PASS!!!
+REG[         58] = 00000000 PASS!!!
+REG[         59] = 00000000 PASS!!!
+REG[         60] = 00000000 PASS!!!
+REG[         61] = 00000000 PASS!!!
+REG[         62] = 00000000 PASS!!!
+REG[         63] = 00000000 PASS!!!
+-----------------------------------------------------------
+        ****************************        
+        **                        **        
+        **  Congratulations !!    **        
+        **                        **        
+        **  Simulation PASS !!    **        
+        **                        **        
+        *************** ************        
+Simulation complete via $finish(1) at time 627 NS + 0
+./subsystem_tb.v:178 #200 $finish;
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Apr 08, 2016 at 16:08:26 CST  (total: 00:00:02)

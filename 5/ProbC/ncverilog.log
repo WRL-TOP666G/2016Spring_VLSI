@@ -1,0 +1,53 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Apr 07, 2016 at 22:26:32 CST
+ncverilog
+	regfile_sipo_tb.v
+	+define+FSDB
+	+access+r
+Recompiling... reason: file './regfile_sipo.v' is newer than expected.
+	expected: Thu Apr  7 21:55:47 2016
+	actual:   Thu Apr  7 22:08:08 2016
+file: regfile_sipo_tb.v
+	module worklib.regfile_sipo:v
+		errors: 0, warnings: 0
+	module worklib.regfile_sipo_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.regfile_sipo:v <0x4e360e0b>
+			streams:   6, words: 19168
+		worklib.regfile_sipo_tb:v <0x1544e3a4>
+			streams:   4, words:  8465
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:               15      15
+		Scalar wires:             4       -
+		Vectored wires:           8       -
+		Always blocks:            2       2
+		Initial blocks:           3       3
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.regfile_sipo_tb:v
+Loading snapshot worklib.regfile_sipo_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'regfile.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+Simulation complete via $finish(1) at time 329 NS + 0
+./regfile_sipo_tb.v:74 #200 $finish;
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Apr 07, 2016 at 22:26:34 CST  (total: 00:00:02)

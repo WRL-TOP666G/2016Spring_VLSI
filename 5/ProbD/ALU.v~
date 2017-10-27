@@ -1,0 +1,128 @@
+/////////////////////////////////////////////////////////////////////
+// ---------------------- IVCAD 2016 Spring ---------------------- //
+// ---------------------- Editor : PHYang   ---------------------- //
+// ---------------------- Version : v.1.01  ---------------------- //
+// ---------------------- Date : 2016.03.08 ---------------------- //
+// ---------------------- ALU reference code  -------------------- // 
+/////////////////////////////////////////////////////////////////////
+
+`timescale 1ns/10ps
+
+// ---------------------- define ---------------------- //
+
+`define	DataSize	32
+`define	ALUopSize	4
+//define ALUop
+`define ADDop			4'b0000
+`define SUBop			4'b0001
+`define ANDop			4'b0010
+`define ORop			4'b0011
+`define XORop			4'b0100
+`define NORop			4'b0101
+`define SRLop			4'b0110
+`define ROTRop			4'b0111
+`define NOTop           4'b1000
+`define NANDop          4'b1001
+`define MAXop           4'b1010
+`define MINop           4'b1011
+`define ABSop           4'b1100
+`define SLTSop          4'b1101
+`define SLLop           4'b1110
+`define ROTLop          4'b1111
+
+module ALU (alu_enable, alu_op, src1, src2, alu_out, alu_overflow);
+
+// ---------------------- input  ---------------------- //
+input 				alu_enable;
+input 	[`ALUopSize-1:0] 	alu_op;
+input 	[`DataSize-1:0] 	src1;
+input 	[`DataSize-1:0] 	src2;
+
+// ---------------------- output ---------------------- //
+output 	[`DataSize-1:0] 	alu_out;
+output 				alu_overflow;
+
+// ----------------------  reg   ---------------------- //
+reg		[`DataSize-1:0]		alu_out;
+reg						alu_overflow;
+reg		[63:0]				temp;
+
+always@(*)begin
+	alu_overflow = 1'b0;
+	if(alu_enable)begin
+		case(alu_op)
+			`ADDop	:	begin
+							alu_out = src1 + src2;
+							if((src1[31]==0 && src2[31]==0 && alu_out[31]==1)||
+							   (src1[31]==1 && src2[31]==1 && alu_out[31]==0))
+								alu_overflow = 1'b1;
+							else
+								alu_overflow = 1'b0;
+							end
+			`SUBop	:	begin
+							alu_out = src1 - src2;
+							if((src1[31]==0 && src2[31]==1 && alu_out[31]==1)||
+							   (src1[31]==1 && src2[31]==0 && alu_out[31]==0))
+								alu_overflow = 1'b1;
+							else
+								alu_overflow = 1'b0;
+							end
+			`ANDop	:	alu_out = src1 & src2;
+			`ORop	:	alu_out = src1 | src2;
+			`XORop	:	alu_out = src1 ^ src2;
+			`NORop	:	alu_out = ~(src1 | src2);
+			`SRLop	:	alu_out = src1 >> src2;
+			`ROTRop	:	begin
+							temp = {src1,src1};
+							temp = temp >> src2;
+							alu_out = temp[31:0];
+			                                end
+			`NOTop      :     alu_out = ~src1                           ;
+			`NANDop     :     alu_out = ~(src1 & src2)                  ;
+
+			`MAXop      :     begin
+							if(src1<src2) 
+								alu_out = src2; 
+							else 
+								alu_out = src1;
+
+						end
+
+			`MINop      :     begin
+							if(src1>src2) 
+								alu_out = src2; 
+							else 
+								alu_out = src1;
+						end
+
+			`ABSop      :     begin
+							if(src1<0) 
+								alu_out = 33'b100000000000000000000000000000000-src1; 
+							else 
+								alu_out = src1;
+							
+						end
+
+			`SLTSop     :     begin
+							if(src1<src2) 
+								alu_out = 32'd1; 
+							else
+								alu_out = 32'd0;
+						end
+
+			`SLLop      :     alu_out = src1 << src2;
+
+
+			`ROTLop     :     begin
+							temp = {src1,src1};
+							temp = temp << src2;
+							alu_out = temp[31:0];
+							
+						end
+			
+			endcase
+		end
+	else 
+		alu_out = 32'b0;
+	end
+endmodule
