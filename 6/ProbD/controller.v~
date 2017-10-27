@@ -1,0 +1,211 @@
+//*************************************************
+//** 2016 spring iVCAD                          
+//** Author: Doris
+//** Description: Controller
+//** Mar. 2014 Tim revised	
+//** Mar. 2015 Jimmy revised		
+//** Mar. 2016 Yip revised  
+//*************************************************
+module controller(
+	//---- input
+	clk,
+	rst,
+	//---- output									 
+	AddrReading,					
+	AddrWriting,					
+	RegIndex,
+	EnableInputMEM,		
+	EnableReg,							
+	EnableOperation,	
+	EnableOutputMEM,	
+	Done													
+	);
+
+output [5:0] AddrReading;
+output [5:0] AddrWriting;
+output [2:0] RegIndex;
+output       EnableInputMEM;
+output       EnableReg;
+output       EnableOperation;
+output       EnableOutputMEM;
+output       Done;
+
+input        clk;
+input        rst;
+
+reg [2:0] state;
+reg [2:0] next_state;
+
+reg [5:0] AddrReading,next_AddrReading;
+reg [5:0] AddrWriting,next_AddrWriting;
+reg [2:0] RegIndex,next_RegIndex; 	// 4 data for one time
+reg [3:0] TimesCounter,next_TimesCounter;	// 8 times for simulation 
+
+reg [3:0]  ntime,ctime;
+
+
+reg       EnableInputMEM;
+reg       EnableReg;
+reg       EnableOperation;
+reg       EnableOutputMEM;
+
+
+
+
+parameter Init      = 3'd0, 
+          ReadMem   = 3'd1,
+          WriteReg  = 3'd2, 
+          Operation = 3'd3,
+          WriteMem  = 3'd4,
+          DONE      = 3'd5;
+          
+  assign Done = (state==DONE)?1:0;
+
+
+	always@(posedge clk or posedge rst) begin //state 
+		if(rst) begin
+			state <= Init; 
+			RegIndex <= 3'd0;
+			TimesCounter <= 4'd0;
+			AddrReading <= 6'd0;
+			AddrWriting <= 6'd0;
+			ctime <= 4'd0;
+			end
+		else    begin
+				state <= next_state;
+				RegIndex <= next_RegIndex;
+				TimesCounter <= next_TimesCounter;
+				AddrReading <= next_AddrReading;
+				AddrWriting <= next_AddrWriting;
+				ctime <= ntime;
+			end
+	end
+
+
+
+
+	always@(*) begin         //state control
+		next_AddrWriting = AddrWriting;
+		next_AddrReading = AddrReading;
+		next_RegIndex = RegIndex;
+		next_TimesCounter = TimesCounter;
+		ntime = ctime;
+		case(state)
+			Init     :      next_state = ReadMem;
+
+
+
+			ReadMem	 :	next_state = WriteReg;
+					
+
+
+
+
+			WriteReg :	
+					if(ctime > 4'd6)
+					begin
+                                        next_state = Operation;
+					ntime=4'd0;
+					next_AddrReading = AddrReading + 1;
+					end
+					else 
+					begin
+                                          next_state = ReadMem;
+					  next_RegIndex = RegIndex + 1;
+					  next_AddrReading = AddrReading + 1;
+					 ntime = ctime + 1;
+					end	
+
+
+
+	
+			Operation:	next_state = WriteMem;
+
+
+			WriteMem :	if(TimesCounter>4'd7)
+					next_state = DONE;
+					else 
+					begin 
+						next_state = Init;  
+						next_TimesCounter = TimesCounter + 1;
+                                        	next_RegIndex = 0;
+						next_AddrWriting = AddrWriting + 1 ;
+					end	
+					  
+					 
+					
+			
+
+		endcase
+	end
+	
+	always@(*) begin         //data control
+		case(state)
+			Init     :  
+				begin
+		                	EnableInputMEM = 0 ;
+		                	EnableReg = 0;
+		                	EnableOperation = 0;
+		                	EnableOutputMEM = 0;
+                                        
+									
+                                      
+		              	end
+			ReadMem: 	
+				begin
+		                	EnableInputMEM = 1 ;
+		                	EnableReg = 0;
+		                	EnableOperation = 0;
+		                	EnableOutputMEM = 0;
+		              	end
+			WriteReg: 	
+				begin
+		                	EnableInputMEM = 0 ;
+		                	EnableReg = 1;
+		               		EnableOperation = 0;
+		               		EnableOutputMEM = 0;
+					
+		
+		              	end
+			Operation: 	
+				begin
+		                	EnableInputMEM = 0 ;
+		                	EnableReg = 0;
+		                	EnableOperation = 1;
+		                	EnableOutputMEM = 0;
+		              	end
+			WriteMem: 	
+				begin
+		                	EnableInputMEM = 0 ;
+		                	EnableReg = 0;
+		                	EnableOperation = 0;
+		                	EnableOutputMEM = 1;
+					
+		              	end
+			
+
+		              
+		  default  :  begin
+		                EnableInputMEM = 0;
+		                EnableReg = 0;
+		                EnableOperation = 0;
+		                EnableOutputMEM = 0;
+		              	end
+		endcase
+	end
+
+endmodule										
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
