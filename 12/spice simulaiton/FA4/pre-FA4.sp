@@ -1,0 +1,74 @@
+*XOR_gate
+.subckt xor A B Y VDD GND 
+
+Mp_A A_inv A VDD VDD p_18 w=1u   L=0.18u
+Mn_A A_inv A GND GND n_18 w=0.5u L=0.18u
+
+
+Mp_B B_inv B VDD VDD p_18 w=1u   L=0.18u
+Mn_B B_inv B GND GND n_18 w=0.5u L=0.18u
+
+
+Mp1 c  A     VDD VDD p_18 w=1u L=0.18u
+Mp2 Y  B_inv c   VDD p_18 w=1u L=0.18u
+Mp3 d  A_inv VDD VDD p_18 w=1u L=0.18u
+Mp4 Y  B     d   VDD p_18 w=1u L=0.18u
+
+
+Mn1 Y A     e   GND n_18 w=0.5u L=0.18u
+Mn2 e A_inv GND GND n_18 w=0.5u L=0.18u
+Mn3 Y B_inv e   GND n_18 w=0.5u L=0.18u
+Mn4 e B     GND GND n_18 w=0.5u L=0.18u
+
+.ends
+
+
+*NAND_gate
+.SUBCKT nand X Y F VDD GND
+Mp1 F X VDD VDD p_18 W=1u L=0.18u 
+Mp2 F Y VDD VDD p_18 W=1u L=0.18u 
+Mn1 F X net1 GND n_18 W=0.5u L=0.18u 
+Mn2 net1 Y GND GND n_18 W=0.5u L=0.18u 
+.ENDS
+
+*FA
+.SUBCKT FA A B C Cout S VDD GND
+XXOR1 A B Y VDD GND XOR
+XXOR2 Y C S VDD GND XOR
+XNAND1 A B D    VDD GND NAND
+XNAND2 C Y E    VDD GND NAND
+XNAND3 D E Cout VDD GND NAND
+.ENDS
+
+*FA4
+.SUBCKT FA4 A0 B0 C0 S0 A1 B1 S1 A2 B2 S2 A3 B3 S3 C4 VDD GND
+XFA1 A0 B0 C0 C1 S0 VDD GND FA
+XFA2 A1 B1 C1 C2 S1 VDD GND FA
+XFA3 A2 B2 C2 C3 S2 VDD GND FA
+XFA4 A3 B3 C3 C4 S3 VDD GND FA
+.ENDS
+
+
+
+
+.GLOBAL GND VDD
+VGND GND 0v DC 0v
+VVDD VDD GND DC 1.8v
+V1 A0 GND PULSE( 0V 1.8V 0u 0u 0u 1u 2u )
+V2 B0 GND PULSE( 0V 1.8V 0u 0u 0u 2u 4u )
+V3 A1 GND PULSE( 0V 1.8V 0u 0u 0u 4u 8u )
+V4 B1 GND PULSE( 0V 1.8V 0u 0u 0u 8u 16u )
+V5 A2 GND PULSE( 0V 1.8V 0u 0u 0u 16u 32u )
+V6 B2 GND PULSE( 0V 1.8V 0u 0u 0u 32u 64u )
+V7 A3 GND PULSE( 0V 1.8V 0u 0u 0u 64u 128u )
+V8 B3 GND PULSE( 0V 1.8V 0u 0u 0u 128u 256u )
+V9 C0 GND PULSE( 0V 1.8V 0u 0u 0u 0u 0u )
+
+XFA4 A0 B0 C0 S0 A1 B1 S1 A2 B2 S2 A3 B3 S3 C4 VDD GND FA4
+
+.protect
+.lib 'cic018.l' TT
+.unprotect
+.options post
+.tran 0.01u 250u
+.end
