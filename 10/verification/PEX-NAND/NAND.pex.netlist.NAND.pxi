@@ -1,0 +1,9 @@
+* File: NAND.pex.netlist.NAND.pxi
+* Created: Tue May 24 14:03:57 2016
+* 
+x_PM_NAND%F N_F_Mp2_d N_F_Mp1_d N_F_Mn1_d F PM_NAND%F
+x_PM_NAND%X N_X_Mn1_g N_X_Mp1_g X PM_NAND%X
+x_PM_NAND%E N_E_Mn2_d N_E_Mn1_s PM_NAND%E
+x_PM_NAND%Y N_Y_Mn2_g N_Y_Mp2_g Y PM_NAND%Y
+x_PM_NAND%GND GND N_GND_Mn1_b N_GND_Mn2_s PM_NAND%GND
+x_PM_NAND%VDD VDD N_VDD_Mp1_b N_VDD_Mp1_s N_VDD_Mp2_s PM_NAND%VDD
