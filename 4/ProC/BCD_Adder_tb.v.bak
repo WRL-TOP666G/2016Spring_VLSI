@@ -1,0 +1,40 @@
+`timescale 1ns/10ps
+`include "BCD_Adder.v"
+
+module BCD_Adder_tb ;
+
+	reg    [3:0] A1,A2,B1,B2;// input  
+	wire   [6:0] Out_0,Out_1;// outputs
+	wire	        ov_flag;  
+  
+  // Instantiate module
+	BCD_Adder m0( .A(A) , .B(B), .addsub(addsub), .S(S), .cout(cout), .ov_flag(ov_flag) ) ;       
+
+  // Monitoring Input & Output port 
+	initial $monitor( $time, " A=%d , B=%d , addsub=%d , S=%d , cout=%d , ov_flag=%d "A,B,addsub,S,cout,ov_flag) ;
+                                                                                                                                 
+	// Declare Input patterns
+	initial begin
+
+		#10 A=10    ; B=1010    ; addsub=0;
+		#10 A=0111  ; B=01      ; addsub=0;
+		#10 A=0111  ; B=1111101 ; addsub=0;
+		#10 A=10110 ; B=1010    ; addsub=1;
+		#10 A=10110 ; B=10000010; addsub=1;
+		#10 A=10110 ; B=11010   ; addsub=1;
+		#20 $finish ; 
+	end
+  
+  // Generate the waveform file
+
+	initial begin
+	`ifdef FSDB
+	$fsdbDumpfile("BCD_Adder.fsdb");
+	$fsdbDumpvars;
+	`endif
+	`ifdef VCD
+	$dumpfile("BCD_Adder.vcd");
+	$dumpvars;
+	`endif
+end
+endmodule

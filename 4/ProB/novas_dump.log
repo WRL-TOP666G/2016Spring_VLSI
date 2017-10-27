@@ -1,0 +1,131 @@
+0. ncsim 10.20-s114
+1. Linux 2.6.18-404.el5 #1 SMP Tue Apr 7 12:42:54 EDT 2015 x86_64
+2. CPU cores: 16
+3. Runtime environment variables:
+4. USER=vlsi1641
+5. LOGNAME=vlsi1641
+6. HOME=/home/user2/vlsi16/vlsi1641
+7. PATH=/usr/cad/spring_soft/laker/cur/bin:/usr/cad/spring_soft/verdi/cur/bin:/usr/cad/spring_soft/verdi/cur/nLint/bin:/usr/cad/mentor/dft/cur/bin:/usr/cad/mentor/tessent/cur/bin:/usr/cad/mentor/calibre/cur/bin:/usr/cad/mentor/modelsim/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/synopsys/star-rcxt/cur/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/synopsys/spice_explorer/cur/bin:/usr/cad/synopsys/icc/cur/amd64/syn/bin:/usr/cad/synopsys/nanosim/cur/bin:/usr/cad/synopsys/nanosim/cur/linux/ns/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/primepower/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/cad/synopsys/hspice/cur/hspice/bin:/usr/cad/synopsys/hspice/cur/hspice/GNU/amd64/gcc-4.5.2-static/bin:/usr/cad/synopsys/hspice/cur/hspice/linux:/usr/bin:/usr/ucb/bin:/usr/bin/X11:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/bin:/sbin:/usr/bin:/usr/ucb:/usr/sbin:/usr/local/bin:/etc:.
+8. MAIL=/var/spool/mail/vlsi1641
+9. SHELL=/bin/tcsh
+10. SSH_CLIENT=192.168.1.13 60853 22
+11. SSH_CONNECTION=192.168.1.13 60853 192.168.100.10 22
+12. SSH_TTY=/dev/pts/3
+13. TERM=xterm
+14. DISPLAY=localhost:12.0
+15. HOSTTYPE=x86_64-linux
+16. VENDOR=unknown
+17. OSTYPE=linux
+18. MACHTYPE=x86_64
+19. SHLVL=1
+20. PWD=/home/user2/vlsi16/vlsi1641/lab4/Lab4_E24039122/ProB
+21. GROUP=pkcs11
+22. HOST=vlsicad9
+23. REMOTEHOST=commonlab13
+24. HOSTNAME=vlsicad9
+25. INPUTRC=/etc/inputrc
+26. LS_COLORS=no=00:fi=00:di=00;34;01:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;32:*.cmd=00;32:*.exe=00;32:*.com=00;32:*.btm=00;32:*.bat=00;32:*.sh=00;32:*.csh=00;32:*.tar=00;31:*.tgz=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.zip=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.bz=00;31:*.tz=00;31:*.rpm=00;31:*.cpio=00;31:*.jpg=00;35:*.gif=00;35:*.bmp=00;35:*.xbm=00;35:*.xpm=00;35:*.png=00;35:*.tif=00;35:
+27. CVS_RSH=ssh
+28. G_BROKEN_FILENAMES=1
+29. SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+30. KDE_IS_PRELINKED=1
+31. KDEDIR=/usr
+32. LESSOPEN=|/usr/bin/lesspipe.sh %s
+33. QTDIR=/usr/lib64/qt-3.3
+34. QTINC=/usr/lib64/qt-3.3/include
+35. QTLIB=/usr/lib64/qt-3.3/lib
+36. LM_LICENSE_FILE=5229@lsncku:5219@lsncku:1717@lsncku:5280@lsncku:5280@lsnctu:5280@lsncu:26585@lsntu
+37. SYNTHESIS=/usr/cad/synopsys/synthesis/cur
+38. SYNOPSYS=/usr/cad/synopsys/icc/cur
+39. SYN_MAN_DIR=/usr/cad/synopsys/synthesis/cur/doc/syn/man
+40. MANPATH=/usr/cad/synopsys/nanosim/cur/doc/ns/man:/usr/cad/synopsys/primepower/cur/doc/pp/man:/usr/cad/synopsys/primepower/cur/doc/pt/man:/usr/cad/synopsys/synthesis/cur/doc/syn/man
+41. installdir=/usr/cad/synopsys/hspice/cur/hspice
+42. ARCH=linux
+43. CMIARCH=RH
+44. mraarch=linux
+45. TMIARCH=RH
+46. HSP_HOME=/usr/cad/synopsys/hspice/cur/hspice
+47. SNPS_PLATFORM=linux
+48. HSP_GCC=/usr/cad/synopsys/hspice/cur/hspice/GNU/amd64/gcc-4.5.2-static/bin/gcc -m32 
+49. HSP_GCC_VERSION=4.5.2
+50. LD_LIBRARY_PATH=/usr/cad/spring_soft/verdi/cur/share/PLI/IUS/LINUX/::/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/cadence/INCISIV/cur/tools/lib:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/lib:/usr/cad/cadence/EDI/cur//tools/tlfUtil/lib:/usr/cad/synopsys/hspice/cur/hspice/amd64/interfaces
+51. CDS_LOAD_ENV=CSF
+52. XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
+53. XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
+54. PRIMEPOWER=/usr/cad/synopsys/primepower/cur
+55. PRIMETIME=/usr/cad/synopsys/primetime/cur
+56. SNPS_SIMIF=/usr/cad/synopsys/nanosim/cur
+57. VCS_HOME=/usr/cad/synopsys/vcs/cur
+58. VCS_CC=gcc
+59. SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
+60. ENCOUNTER=/usr/cad/cadence/EDI/cur/tools/fe
+61. OAHOME=/usr/cad/cadence/EDI/cur/oa_v22.41.013
+62. OA_HOME=/usr/cad/cadence/EDI/cur/oa_v22.41.013
+63. CDS_Netlisting_Mode=Analog
+64. MGC_HOME=/usr/cad/mentor/dft/cur
+65. MGC_TMPDIR=/tmp
+66. MGC_LOCATION_MAP=NO_MAP
+67. SHLIB_PATH=/usr/cad/spring_soft/verdi/cur/share/PLI/IUS/LINUX
+68. USE_PIPE=1
+69. /home/user2/vlsi16/vlsi1641/lab4/Lab4_E24039122/ProB/INCA_libs/irun.lnx86.10.20.nc/svpp.ts
+70. CDS_ARCH=lnx86
+71. NCRUNMODE=ncverilog:./INCA_libs/irun.lnx86.10.20.nc
+72. IRUNBATCH=FALSE
+73. TCL_LIBRARY=/usr/cad/cadence/INCISIV/cur/tools/inca/files/tcl/library
+74. Runtime command line arguments:
+75. argv[0]=ncverilog
+76. argv[1]=addsub_8bit_tb.v
+77. argv[2]=+define+FSDB
+78. argv[3]=+access+r
+79. profile - 100
+          CPU/Mem usage: 0.020 sys,  0.050 user,  39.63M sys,  0.00M vm
+80. VC callback profile - scalar:0 vector:0
+81. Tue Mar 22 09:35:54 2016
+82. pliAppInit
+83. pliAppMiscSet: New Sim Round
+84. argv[0]: addsub_8bit.fsdb
+85. Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+86. Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+87. ***********************************************************************
+88. *  WARNING -                                                          *
+89. *  The simulator version is newer than the FSDB dumper version which  *
+90. *  may cause abnormal behavior. Please contact SpringSoft support at  *
+91. *  support@springsoft.com for assistance.                             *
+92. ***********************************************************************
+93. sps_call_fsdbDumpfile at 0 : /home/user2/vlsi16/vlsi1641/lab4/Lab4_E24039122/ProB/addsub_8bit_tb.v(33)
+94. argv[0]: addsub_8bit.fsdb
+95. *Novas* : Create FSDB file 'addsub_8bit.fsdb'
+96. sps_call_fsdbDumpvars at 0 : /home/user2/vlsi16/vlsi1641/lab4/Lab4_E24039122/ProB/addsub_8bit_tb.v(34)
+97. *Novas* : Begin traversing the scopes, layer (0).
+98. *Novas* : End of traversing.
+99. fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.060 user,  45.15M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  2.41M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  2.41M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  2.41M sys,  0.00M vm
+
+          Count usage: 146 var,  69 idcode,  69 callback
+                 incr: 146 var,  69 idcode,  69 callback
+                 accu: 146 var,  69 idcode,  69 callback
+            accu incr: 146 var,  69 idcode,  69 callback
+100. VC callback profile - scalar:0 vector:0
+101. Tue Mar 22 09:35:54 2016
+102. fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.020 sys,  0.060 user,  46.20M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
+                   accu: 0.000 sys,  0.000 user,  3.47M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
+
+          Count usage: 146 var,  69 idcode,  69 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 146 var,  69 idcode,  69 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+103. VC callback profile - scalar:67 vector:2
+104. Tue Mar 22 09:35:54 2016
+105. End of simulation at 8000
+106. VC callback profile - scalar:278 vector:11
+107. Tue Mar 22 09:35:54 2016
+108. Sim process exit
+
+
+

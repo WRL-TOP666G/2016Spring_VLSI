@@ -1,0 +1,60 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Mar 22, 2016 at 09:35:53 CST
+ncverilog
+	addsub_8bit_tb.v
+	+define+FSDB
+	+access+r
+file: addsub_8bit_tb.v
+	module worklib.one_bit_fulladder:v
+		errors: 0, warnings: 0
+	module worklib.add_8bit:v
+		errors: 0, warnings: 0
+	module worklib.addsub_8bit:v
+		errors: 0, warnings: 0
+	module worklib.addsub_8bit_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.addsub_8bit_tb:v <0x5094a718>
+			streams:   7, words:  7470
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                 11       4
+		Primitives:              49       3
+		Registers:                3       3
+		Scalar wires:             1       -
+		Expanded wires:          16       2
+		Initial blocks:           3       3
+		Pseudo assignments:       3       3
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.addsub_8bit_tb:v
+Loading snapshot worklib.addsub_8bit_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'addsub_8bit.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+                   0 A=  x , B=  x , addsub=x , S=  x , cout=x , ov_flag=x  
+                  10 A=  2 , B=  1 , addsub=0 , S=  3 , cout=0 , ov_flag=0  
+                  20 A=  7 , B=  3 , addsub=0 , S= 10 , cout=0 , ov_flag=0  
+                  30 A=  7 , B=125 , addsub=0 , S=132 , cout=0 , ov_flag=1  
+                  40 A= 22 , B= 10 , addsub=1 , S= 12 , cout=1 , ov_flag=0  
+                  50 A= 22 , B=131 , addsub=1 , S=147 , cout=0 , ov_flag=1  
+                  60 A= 22 , B= 26 , addsub=1 , S=252 , cout=0 , ov_flag=0  
+Simulation complete via $finish(1) at time 80 NS + 0
+./addsub_8bit_tb.v:26 		#20 $finish ; 
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Mar 22, 2016 at 09:35:54 CST  (total: 00:00:01)

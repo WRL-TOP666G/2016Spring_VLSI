@@ -1,0 +1,42 @@
+`timescale 1ns/10ps
+`include "addsub_8bit.v"
+
+module addsub_8bit_tb ;
+
+	reg  [7:0] A,B;                // input
+	reg	     addsub ;
+	wire [7:0] S;     // outputs
+	wire	     cout,ov_flag ;
+  
+  // Instantiate module
+	addsub_8bit m0( .S(S) , .cout(cout), .A(A), .B(B), .addsub(addsub), .ov_flag(ov_flag) ) ;  
+    
+
+  // Monitoring Input & Output port 
+	initial $monitor($time,"S=%d , cout=%d , A=%b , B=%b , addsub=%d , ov_flag=%d ",S, cout,A,B,addsub,ov_flag);
+                                                                                                                                 
+	// Declare Input patterns
+	initial begin
+
+		    A=10    ; B=1       ; addsub=0;
+		#10 A=0111  ; B=011     ; addsub=0;
+		#10 A=0111  ; B=1111101 ; addsub=0;
+		#10 A=10110 ; B=1010    ; addsub=1;
+		#10 A=10110 ; B=10000011; addsub=1;
+		#10 A=10110 ; B=11010   ; addsub=1;
+		#20 $finish ; 
+	end
+  
+  // Generate the waveform file
+
+	initial begin
+	`ifdef FSDB
+	$fsdbDumpfile("addsub_8bit.fsdb");
+	$fsdbDumpvars;
+	`endif
+	`ifdef VCD
+	$dumpfile("addsub_8bit.vcd");
+	$dumpvars;
+	`endif
+end
+endmodule

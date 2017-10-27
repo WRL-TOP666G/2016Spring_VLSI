@@ -1,0 +1,58 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Mar 22, 2016 at 09:33:04 CST
+ncverilog
+	Dec_BCDto7S_tb.v
+	+define+FSDB
+	+access+r
+file: Dec_BCDto7S_tb.v
+	module worklib.Dec_BCDto7S:v
+		errors: 0, warnings: 0
+	module worklib.Dec_BCDto7S_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Dec_BCDto7S_tb:v <0x4ee385e6>
+			streams:   8, words: 11431
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Primitives:              37       3
+		Registers:                4       4
+		Scalar wires:             4       -
+		Initial blocks:           3       3
+		Pseudo assignments:       4       4
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.Dec_BCDto7S_tb:v
+Loading snapshot worklib.Dec_BCDto7S_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'Dec_BCDto7S.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+                   0 A=0 , B=0 , C=0 , D=0 , a=1 , b=1 , c=1 , d=1 , e=1 , f=1 , g=0 
+                  10 A=0 , B=0 , C=0 , D=1 , a=0 , b=1 , c=1 , d=0 , e=0 , f=0 , g=0 
+                  20 A=0 , B=0 , C=1 , D=0 , a=1 , b=1 , c=0 , d=1 , e=1 , f=0 , g=1 
+                  30 A=0 , B=0 , C=1 , D=1 , a=1 , b=1 , c=1 , d=1 , e=0 , f=0 , g=1 
+                  40 A=0 , B=1 , C=0 , D=0 , a=0 , b=1 , c=1 , d=0 , e=0 , f=1 , g=1 
+                  50 A=0 , B=1 , C=0 , D=1 , a=1 , b=0 , c=1 , d=1 , e=0 , f=1 , g=1 
+                  60 A=0 , B=1 , C=1 , D=0 , a=1 , b=0 , c=1 , d=1 , e=1 , f=1 , g=1 
+                  70 A=0 , B=1 , C=1 , D=1 , a=1 , b=1 , c=1 , d=0 , e=0 , f=0 , g=0 
+                  80 A=1 , B=0 , C=0 , D=0 , a=1 , b=1 , c=1 , d=1 , e=1 , f=1 , g=1 
+                  90 A=1 , B=0 , C=0 , D=1 , a=1 , b=1 , c=1 , d=1 , e=0 , f=1 , g=1 
+Simulation complete via $finish(1) at time 110 NS + 0
+./Dec_BCDto7S_tb.v:28 		#20 $finish ; 
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Mar 22, 2016 at 09:33:06 CST  (total: 00:00:02)

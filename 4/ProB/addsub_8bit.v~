@@ -1,0 +1,21 @@
+`timescale 1ns/10ps
+module addsub_8bit( S, cout,A,B,addsub,ov_flag) ;
+	output [7:0] S;
+	output       cout,ov_flag ;
+	input        addsub ;
+  	input  [7:0] A,B;
+  
+  	wire ab,b,c,d,e;
+  
+  not(b,B);
+  not(ab,addsub);
+  and(c,ab,B);
+  and(d,b,addsub);
+  or(e,c,d);
+
+  add_8bit A0 (S,cout,A,e,addsub,ov_flag);
+
+
+//Note : primary gates doesn't need instance name when called
+
+endmodule

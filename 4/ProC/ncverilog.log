@@ -1,0 +1,30 @@
+ncverilog: 10.20-s114: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	ncverilog	10.20-s114: Started on Mar 22, 2016 at 09:45:56 CST
+ncverilog
+	BCD_Adder_tb.v
+	+define+FSDB
+	+access+r
+Loading snapshot worklib.BCD_Adder_tb:v .................... Done
+*Novas* Loading libsscore_ius92.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+Novas FSDB Dumper for IUS, Release 2010.10 (Linux) 10/01/2010
+Copyright (C) 1996 - 2010 by SpringSoft, Inc.
+***********************************************************************
+*  WARNING -                                                          *
+*  The simulator version is newer than the FSDB dumper version which  *
+*  may cause abnormal behavior. Please contact SpringSoft support at  *
+*  support@springsoft.com for assistance.                             *
+***********************************************************************
+*Novas* : Create FSDB file 'BCD_Adder.fsdb'
+*Novas* : Begin traversing the scopes, layer (0).
+*Novas* : End of traversing.
+                   0 A2= x  , A1= x , B2= x , B1= x , Out_0=xxxxxxx , Out_1=xxxxxxx , ov_flag=x 
+                  10 A2= 0  , A1= 5 , B2= 0 , B1= 8 , Out_0=1111001 , Out_1=0110000 , ov_flag=0 
+                  20 A2= 1  , A1= 3 , B2= 2 , B1= 4 , Out_0=1110000 , Out_1=1111001 , ov_flag=0 
+                  30 A2= 5  , A1= 1 , B2= 0 , B1= 9 , Out_0=1111110 , Out_1=1011111 , ov_flag=0 
+                  40 A2= 9  , A1= 9 , B2= 9 , B1= 9 , Out_0=1111111 , Out_1=1111011 , ov_flag=1 
+Simulation complete via $finish(1) at time 60 NS + 0
+./BCD_Adder_tb.v:22 		#20 $finish ; 
+ncsim> exit
+TOOL:	ncverilog	10.20-s114: Exiting on Mar 22, 2016 at 09:45:59 CST  (total: 00:00:03)

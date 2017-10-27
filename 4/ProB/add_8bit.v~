@@ -1,0 +1,22 @@
+`timescale 1ns/10ps
+module add_8bit( S,cout,A,B,addsub,ov_flag) ;
+	output [7:0] S;
+	output       cout,ov_flag ;
+	input        addsub ;
+  input  [7:0] A,B;
+  
+  
+	one_bit_fulladder A0(S[0],C1  ,A[0],B[0],addsub);
+	one_bit_fulladder A1(S[1],C2  ,A[1],B[1],C1    );
+	one_bit_fulladder A2(S[2],C3  ,A[2],B[2],C2    );
+	one_bit_fulladder A3(S[3],C4  ,A[3],B[3],C3    );
+	one_bit_fulladder A4(S[4],C5  ,A[4],B[4],C4    );
+	one_bit_fulladder A5(S[5],C6  ,A[5],B[5],C5    );
+	one_bit_fulladder A6(S[6],C7  ,A[6],B[6],C6    );
+	one_bit_fulladder A7(S[7],cout,A[7],B[7],C7    );
+	xor(ov_flag,C6,C7);
+
+
+//Note : primary gates doesn't need instance name when called
+
+endmodule
